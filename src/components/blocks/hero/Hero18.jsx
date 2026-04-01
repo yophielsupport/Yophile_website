@@ -95,7 +95,6 @@ const Hero18 = () => {
         margin: '0 auto',
         overflow: 'hidden',
         position: 'relative',
-         // Gradient background
       }}
     >
       <Slider {...settings}>
@@ -112,9 +111,11 @@ const Hero18 = () => {
               alt={`Slide ${slide.id}`}
               style={{
                 width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                transform: 'scale(0.95)',
+                height: 'auto',
+                maxHeight: 'calc(100vh - 70px)',
+                objectFit: 'contain',
+                objectPosition: 'center top',
+                display: 'block',
                 transition: 'transform 0.3s ease',
               }}
               className="slider-image"
@@ -145,7 +146,7 @@ const Hero18 = () => {
 
         @media (max-width: 768px) {
           .slider-image {
-            height: 60vh !important;
+            max-height: 55vh !important;
             transform: scale(1) !important;
             opacity: 1 !important;
           }
@@ -157,7 +158,7 @@ const Hero18 = () => {
 
         @media (max-width: 480px) {
           .slider-image {
-            height: 50vh !important;
+            max-height: 45vh !important;
           }
         }
       `}</style>
