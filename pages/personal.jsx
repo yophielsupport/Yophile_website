@@ -1,125 +1,24 @@
-import Image from 'next/image';
-import { Fragment } from 'react';
-import { Navbar } from 'components/blocks/navbar';
-import { Footer11 } from 'components/blocks/footer';
-import PageProgress from 'components/common/PageProgress';
-import NextLink from 'components/reuseable/links/NextLink';
+import BusinessLinePage from 'components/common/BusinessLinePage';
 
-const ProjectDetails = () => {
+const products = [
+  { icon: '🫧', name: 'Surfactants', description: 'Enhance cleaning, foaming and wetting properties in detergents, shampoos and body wash formulations.' },
+  { icon: '🧴', name: 'Emulsifiers', description: 'Stabilize oil-in-water and water-in-oil emulsions in lotions, creams and conditioners.' },
+  { icon: '💆', name: 'Conditioning Agents', description: 'Improve hair softness, manageability and shine in professional and consumer personal care products.' },
+  { icon: '💧', name: 'Moisturizers & Humectants', description: 'Attract and retain moisture to maintain healthy, hydrated skin in cosmetic and skincare formulations.' },
+  { icon: '🌸', name: 'Fragrances', description: 'High-quality aromatic compounds adding pleasant, lasting scents to personal care and cleaning products.' },
+  { icon: '🔬', name: 'Preservatives', description: 'Extend product shelf life and safety by preventing microbial growth in water-based formulations.' },
+  { icon: '🧪', name: 'Thickening Agents', description: 'Improve texture, rheology and viscosity of creams, gels and liquid formulations.' },
+  { icon: '🛡️', name: 'Antimicrobial Agents', description: 'Ensure hygiene and safety by controlling bacteria, fungi and viruses in personal care products.' },
+];
+
+export default function Personal() {
   return (
-    <Fragment>
-      <PageProgress />
-
-      {/* Navbar Section */}
-      <Navbar
-        language
-        button={
-          <NextLink
-            title="Contact"
-            href="#"
-            className="btn btn-sm btn-primary rounded-pill"
-          />
-        }
-      />
-
-      {/* Header Section */}
-      <header style={{ backgroundColor: '#f3f8fc', padding: '1rem 0' }}>
-        {/* Full-Width Image */}
-        <div style={{ marginBottom: '1rem', padding: '0 1rem' }}>
-          <Image
-            src="/img/cardimg/homecarebss.jpg"
-            alt="Yophiel Header"
-            layout="responsive"
-            width={1920}
-            height={200}
-            style={{
-              borderRadius: '15px',
-              objectFit: 'cover',
-            }}
-          />
-        </div>
-
-        {/* Brief Information about Yophiel */}
-        <div style={{ textAlign: 'center', margin: '1rem auto', maxWidth: '800px' }}>
-          <p style={{ fontSize: '1.4rem', color: '#555' }}>
-            Yophiel Internationals is a leader in providing specialized Plastic & Rubber
-            chemicals that enhance efficiency and productivity. We strive for innovation and
-            excellence in every solution we deliver.
-          </p>
-        </div>
-      </header>
-
-      <main style={{ backgroundColor: '#ffffff', color: '#333333' }}>
-        {/* Centered Heading and Subpoints */}
-        <section style={{ padding: '4rem 2rem', backgroundColor: '#ffffff' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h1
-  style={{
-    fontSize: '2.5rem',
-    fontWeight: '700',
-    marginBottom: '2rem',
-    color: '#1a1a1a',
-    textTransform: 'uppercase',
-  }}
->
-  PERSONAL & HOME CARE
-</h1>
-<div
-  style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '2rem',
-    textAlign: 'left',
-  }}
->
-  <ul
-    style={{
-      paddingLeft: '1.5rem',
-      listStyleType: 'disc',
-      color: '#333',
-      fontSize: '1.3rem',
-      lineHeight: '1.8',
-    }}
-  >
-    <li><strong>Surfactants:</strong> Enhance cleaning and foaming properties in detergents and shampoos.</li>
-    <li><strong>Emulsifiers:</strong> Stabilize mixtures of oil and water in lotions and creams.</li>
-    <li><strong>Conditioning Agents:</strong> Improve hair softness and manageability in personal care products.</li>
-    <li><strong>Moisturizers:</strong> Retain water to keep skin hydrated and healthy.</li>
-  </ul>
-  <ul
-    style={{
-      paddingLeft: '1.5rem',
-      listStyleType: 'disc',
-      color: '#333',
-      fontSize: '1.3rem',
-      lineHeight: '1.8',
-    }}
-  >
-    <li><strong>Fragrances:</strong> Add pleasant scents to personal care and cleaning products.</li>
-    <li><strong>Preservatives:</strong> Extend the shelf life by preventing microbial growth.</li>
-    <li><strong>Thickening Agents:</strong> Improve the texture and viscosity of creams and gels.</li>
-    <li><strong>Antimicrobial Agents:</strong> Reduce bacteria and ensure hygiene in personal care products.</li>
-  </ul>
-</div>
-
-          </div>
-        </section>
-
-        <section
-          style={{
-            padding: '4rem 2rem',
-            backgroundColor: '#ffffff',
-            lineHeight: '1.8',
-            fontFamily: "'Roboto', sans-serif",
-          }}
-        >
-          {/* Additional content can go here */}
-        </section>
-      </main>
-
-      <Footer11 />
-    </Fragment>
+    <BusinessLinePage
+      title="Home, Personal & Industrial Cleaning"
+      subtitle="Performance ingredients and specialty chemicals for personal care, home care and industrial cleaning applications."
+      heroImage="/img/cardimg/homecarebss.jpg"
+      description="Yophiel Internationals provides a broad portfolio of specialty chemicals and performance ingredients for the personal care, home care and industrial cleaning sectors. From surfactants and emulsifiers to active ingredients and preservatives, our solutions are sourced from world-class manufacturers and are fully compliant with international regulatory standards."
+      products={products}
+    />
   );
-};
-
-export default ProjectDetails;
+}

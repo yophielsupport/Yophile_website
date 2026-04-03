@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Fragment, useRef } from 'react';
 import useSticky from 'hooks/useSticky';
 import useNestedDropdown from 'hooks/useNestedDropdown';
@@ -10,14 +9,10 @@ import DropdownToggleLink from 'components/reuseable/links/DropdownToggleLink';
 
 import Info from './partials/Info';
 import Search from './partials/Search';
-import Social from './partials/Social';
 import Signin from './partials/Signin';
 import Signup from './partials/Signup';
-import Language from './partials/Language';
 import MiniCart from './partials/MiniCart';
 
-import { demos, pages, blogsNavigation, blocksNavigation, projectsNavigation, documentionNavigation, aboutus } from 'data/navigation';
-import IconLink from 'components/reuseable/links/IconLink';
 import NavLinko from 'components/reuseable/links/NavLink';
 import Buttono from 'components/reuseable/links/Buttono';
 
@@ -26,44 +21,103 @@ const Navbar = (props) => {
     navClassName,
     info,
     search,
-    social,
-    language,
-    button,
     cart,
     fancy,
     navOtherClass,
     stickyBox,
-    logoAlt
   } = props;
 
   useNestedDropdown();
   const sticky = useSticky(350);
   const navbarRef = useRef(null);
-
-  const logo = sticky ? 'logo-dark' : logoAlt ?? 'logo-dark';
   const fixedClassName = 'navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed';
-
-  const renderLinks = (links) => {
-    return links.map(item => (
-      <ListItemLink href={item.url} title={item.title} linkClassName="dropdown-item" key={item.id} />
-    ));
-  };
 
   const headerContent = (
     <Fragment>
-     <div className="navbar-brand w-100">
-  <NextLink
-    href="/"
-    title={
-      <img
-        alt="logo"
-        src={`/img/Website/Page Logo 1.png`}
-        style={{ width: '150px', height: 'auto' }} // Adjust width and height as needed
-      />
-    }
-  />
-</div>
+      <style jsx global>{`
+        /* ── Nav links ── */
+        .navbar .nav-link {
+          font-size: 15.5px !important;
+          font-weight: 700 !important;
+          color: #1a1a2e !important;
+          letter-spacing: 0.03em;
+          padding: 10px 20px !important;
+          transition: color 0.2s ease !important;
+        }
+        .navbar .nav-link:hover {
+          color: rgb(0,166,228) !important;
+        }
 
+        /* ── Dropdown menu ── */
+        .navbar .dropdown-menu {
+          border: none !important;
+          border-radius: 14px !important;
+          box-shadow: 0 16px 48px rgba(0,0,0,0.14) !important;
+          padding: 8px !important;
+          border-top: 3px solid rgb(0,166,228) !important;
+          min-width: 220px !important;
+          margin-top: 8px !important;
+        }
+        .navbar .dropdown-item {
+          font-size: 13px !important;
+          font-weight: 600 !important;
+          color: #2d3748 !important;
+          border-radius: 8px !important;
+          padding: 10px 14px !important;
+          transition: background 0.18s, color 0.18s !important;
+        }
+        .navbar .dropdown-item:hover {
+          background: rgba(0,166,228,0.08) !important;
+          color: rgb(0,166,228) !important;
+        }
+
+        /* ── Download Brochure button ── */
+        .yn-brochure-btn {
+          display: inline-block;
+          background: linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%);
+          color: #fff !important;
+          font-size: 12.5px !important;
+          font-weight: 800 !important;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          padding: 10px 22px !important;
+          border-radius: 50px !important;
+          border: none !important;
+          box-shadow: 0 4px 16px rgba(0,166,228,0.30);
+          transition: opacity 0.2s, box-shadow 0.2s, transform 0.2s;
+          white-space: nowrap;
+          text-decoration: none !important;
+        }
+        .yn-brochure-btn:hover {
+          opacity: 0.88;
+          box-shadow: 0 8px 24px rgba(0,166,228,0.40);
+          transform: translateY(-1px);
+          color: #fff !important;
+        }
+
+        /* ── Bottom accent line ── */
+        .yn-accent-line {
+          height: 3px;
+          background: linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%);
+          margin: 0;
+        }
+      `}</style>
+
+      {/* Logo */}
+      <div className="navbar-brand w-100">
+        <NextLink
+          href="/"
+          title={
+            <img
+              alt="logo"
+              src="/img/Website/Page Logo 1.png"
+              style={{ width: '150px', height: 'auto' }}
+            />
+          }
+        />
+      </div>
+
+      {/* Original Bootstrap offcanvas nav — structure untouched */}
       <div
         id="offcanvas-nav"
         data-bs-scroll="true"
@@ -80,55 +134,56 @@ const Navbar = (props) => {
         </div>
 
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-          <ul className="navbar-nav" style={{color:'rgb(0, 0, 0)'}}>
+          <ul className="navbar-nav">
             <li className="nav-item dropdown">
-              <DropdownToggleLink title="About Us" className="nav-link dropdown-toggle" style={{color:'rgb(0, 0, 0)'}} />
+              <DropdownToggleLink title="About Us" className="nav-link dropdown-toggle" />
               <ul className="dropdown-menu">
-                <ListItemLink href="/whoweare" title="Who we are" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
-                <ListItemLink href="/ourvalues" title="Our Values" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
+                <ListItemLink href="/whoweare"  title="Who We Are"  linkClassName="dropdown-item" />
+                <ListItemLink href="/ourvalues" title="Our Values"  linkClassName="dropdown-item" />
               </ul>
             </li>
 
             <li className="nav-item dropdown">
-              <DropdownToggleLink title="Business Lines" className="nav-link dropdown-toggle" style={{color:'rgb(0, 0, 0)'}} />
+              <DropdownToggleLink title="Business Lines" className="nav-link dropdown-toggle" />
               <ul className="dropdown-menu">
-                <ListItemLink href="/oilfield" title="Oilfield & Refinery Chemicals" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
-                <ListItemLink href="/lubricants" title="Lubricants & Grease Additives" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
-                <ListItemLink href="/personal" title="Personal & Home Care" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
-                <ListItemLink href="/plastics" title="Plastics & Rubber" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
-                <ListItemLink href="/treatment" title="Water Treatment Chemicals" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
+                <ListItemLink href="/oilfield"   title="Oil & Gas"                            linkClassName="dropdown-item" />
+                <ListItemLink href="/lubricants" title="Lubricants & Grease"                  linkClassName="dropdown-item" />
+                <ListItemLink href="/personal"   title="Home, Personal & Industrial Cleaning" linkClassName="dropdown-item" />
+                <ListItemLink href="/plastics"   title="Plastics & Rubber"                    linkClassName="dropdown-item" />
+                <ListItemLink href="/treatment"  title="Water Treatment"                      linkClassName="dropdown-item" />
+                <ListItemLink href="/paints"     title="Paints & Coatings"                    linkClassName="dropdown-item" />
               </ul>
             </li>
 
-            <li className="nav-item dropdown" style={{color:'rgb(0, 0, 0)'}}>
-              <DropdownToggleLink title="Resources" className="nav-link dropdown-toggle" style={{color:'rgb(0, 0, 0)'}} />
+            <li className="nav-item dropdown">
+              <DropdownToggleLink title="Resources" className="nav-link dropdown-toggle" />
               <ul className="dropdown-menu">
-                <ListItemLink href="/engneering" title="Engineering Services" linkClassName="dropdown-item" style={{ color: 'rgb(1, 1, 1)' }} />
-                <ListItemLink href="/procurement" title="Procurement" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
-                <ListItemLink href="/contracts" title="Maintenance Contracts" linkClassName="dropdown-item" style={{ color: '#4A90E2' }} />
+                <ListItemLink href="/engneering"  title="Engineering Services"  linkClassName="dropdown-item" />
+                <ListItemLink href="/procurement" title="Procurement"           linkClassName="dropdown-item" />
+                <ListItemLink href="/contracts"   title="Maintenance Contracts" linkClassName="dropdown-item" />
               </ul>
             </li>
 
             <li className="nav-item dropdown dropdown-mega">
-              <NavLinko title="Contact Us" href="/contact-2" className="nav-link" style={{color:'rgb(0, 0, 0)'}} />
+              <NavLinko title="Contact Us" href="/contact-2" className="nav-link" />
             </li>
           </ul>
 
-          {/* Download Brochure button in offcanvas for mobile (hidden on large) */}
+          {/* Mobile brochure button */}
           <div className="mt-3 d-lg-none">
             <Buttono
               title="Download Brochure"
-              className="btn btn-primary w-100"
-              style={{ backgroundColor: '#4A90E2', borderColor: '#4A90E2' }}
-              downloadLink="https://pdfobject.com/pdf/sample.pdf"
+              className="btn w-100 yn-brochure-btn"
+              style={{}}
+              downloadLink="https://drive.google.com/file/d/1YbXu5NtP98UmbKWDTNfVw4Aj8RJefGev/view?usp=sharing"
             />
           </div>
 
           <div className="offcanvas-footer d-lg-none mt-auto">
             <div>
-              <NextLink title="sales@yophiel.net" className="link-inverse" href="mailto:sales@yophiel.net" style={{ color: '#4A90E2' }} />
+              <NextLink title="sales@yophiel.net" className="link-inverse" href="mailto:sales@yophiel.net" />
               <br />
-              <NextLink href="tel:9637422525" title="+91-9637422525" style={{ color: '#4A90E2' }} />
+              <NextLink href="tel:9637422525" title="+91-9637422525" />
               <br />
               <SocialLinks />
             </div>
@@ -136,24 +191,23 @@ const Navbar = (props) => {
         </div>
       </div>
 
+      {/* Right side */}
       <div className={navOtherClass}>
         <ul className="navbar-nav flex-row align-items-center ms-auto">
           {info && (
             <li className="nav-item">
               <a className="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info">
-                <i className="uil uil-info-circle" style={{ color: '#4A90E2' }} />
+                <i className="uil uil-info-circle" />
               </a>
             </li>
           )}
-
           {search && (
             <li className="nav-item">
               <a className="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search">
-                <i className="uil uil-search" style={{ color: '#4A90E2' }} />
+                <i className="uil uil-search" />
               </a>
             </li>
           )}
-
           <li className="nav-item d-lg-none">
             <button
               data-bs-toggle="offcanvas"
@@ -165,17 +219,16 @@ const Navbar = (props) => {
           </li>
         </ul>
 
-        {/* Download Brochure button on large screens (hidden on mobile) */}
+        {/* Desktop brochure button */}
         <div className="ms-auto d-none d-lg-block">
           <Buttono
-            title="Download Brochure"
-            className="btn btn-primary"
-            style={{ backgroundColor: 'linear-gradient(135deg, rgb(0, 166, 228) 0%, rgb(121, 191, 30) 100%)', borderColor: ' #04b5ac' }}
+            title="Download Brochure ↓"
+            className="yn-brochure-btn"
+            style={{}}
             downloadLink="https://drive.google.com/file/d/1YbXu5NtP98UmbKWDTNfVw4Aj8RJefGev/view?usp=sharing"
           />
         </div>
       </div>
-      
     </Fragment>
   );
 
@@ -199,7 +252,9 @@ const Navbar = (props) => {
             </div>
           </div>
         ) : (
-          <div className="container flex-lg-row flex-nowrap align-items-center mb-3">{headerContent}</div>
+          <div className="container flex-lg-row flex-nowrap align-items-center" style={{ paddingTop: '10px', paddingBottom: '10px' }}>
+            {headerContent}
+          </div>
         )}
       </nav>
 
@@ -208,7 +263,7 @@ const Navbar = (props) => {
       {info && <Info />}
       {search && <Search />}
       {cart && <MiniCart />}
-      <div style={{ height: '3px', background: 'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%)', margin: '0' }} />
+      <div className="yn-accent-line" />
     </Fragment>
   );
 };

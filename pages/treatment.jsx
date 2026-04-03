@@ -1,125 +1,24 @@
-import Image from 'next/image';
-import { Fragment } from 'react';
-import { Navbar } from 'components/blocks/navbar';
-import { Footer11 } from 'components/blocks/footer';
-import PageProgress from 'components/common/PageProgress';
-import NextLink from 'components/reuseable/links/NextLink';
+import BusinessLinePage from 'components/common/BusinessLinePage';
 
-const ProjectDetails = () => {
+const products = [
+  { icon: '🌊', name: 'Coagulants', description: 'Facilitate rapid removal of suspended particles, colloids and turbidity from industrial and municipal water.' },
+  { icon: '🔗', name: 'Flocculants', description: 'Aggregate fine particles into larger, settleable flocs for efficient clarification and sludge dewatering.' },
+  { icon: '🛡️', name: 'Biocides', description: 'Eliminate harmful bacteria, algae and microorganisms in cooling towers, process water and distribution systems.' },
+  { icon: '⚗️', name: 'pH Adjusters', description: 'Balance acidity and alkalinity to protect equipment and optimize chemical treatment efficiency.' },
+  { icon: '🔬', name: 'Scale Inhibitors', description: 'Prevent calcium carbonate, sulphate and silica scale buildup in pipes, heat exchangers and membrane systems.' },
+  { icon: '⚙️', name: 'Corrosion Inhibitors', description: 'Protect carbon steel, copper alloys and other metals from corrosion in recirculating and open water systems.' },
+  { icon: '💧', name: 'Disinfectants', description: 'Ensure safe, potable water by eliminating bacteria and viruses in drinking water and wastewater systems.' },
+  { icon: '🫧', name: 'Defoamers', description: 'Control and eliminate foam in industrial water systems, wastewater treatment and process applications.' },
+];
+
+export default function Treatment() {
   return (
-    <Fragment>
-      <PageProgress />
-
-      {/* Navbar Section */}
-      <Navbar
-        language
-        button={
-          <NextLink
-            title="Contact"
-            href="#"
-            className="btn btn-sm btn-primary rounded-pill"
-          />
-        }
-      />
-
-      {/* Header Section */}
-      <header style={{ backgroundColor: '#f3f8fc', padding: '1rem 0' }}>
-        {/* Full-Width Image */}
-        <div style={{ marginBottom: '1rem', padding: '0 1rem' }}>
-          <Image
-            src="/img/cardimg/waterbss.jpg"
-            alt="Yophiel Header"
-            layout="responsive"
-            width={1920}
-            height={200}
-            style={{
-              borderRadius: '15px',
-              objectFit: 'cover',
-            }}
-          />
-        </div>
-
-        {/* Brief Information about Yophiel */}
-        <div style={{ textAlign: 'center', margin: '1rem auto', maxWidth: '800px' }}>
-          <p style={{ fontSize: '1.4rem', color: '#555' }}>
-            Yophiel Internationals is a leader in providing specialized Water Treatment 
-            chemicals that enhance efficiency and productivity. We strive for innovation and
-            excellence in every solution we deliver.
-          </p>
-        </div>
-      </header>
-
-      <main style={{ backgroundColor: '#ffffff', color: '#333333' }}>
-        {/* Centered Heading and Subpoints */}
-        <section style={{ padding: '4rem 2rem', backgroundColor: '#ffffff' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <h1
-  style={{
-    fontSize: '2.5rem',
-    fontWeight: '700',
-    marginBottom: '2rem',
-    color: '#1a1a1a',
-    textTransform: 'uppercase',
-  }}
->
-  WATER TREATMENT CHEMICALS
-</h1>
-<div
-  style={{
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '2rem',
-    textAlign: 'left',
-  }}
->
-  <ul
-    style={{
-      paddingLeft: '1.5rem',
-      listStyleType: 'disc',
-      color: '#333',
-      fontSize: '1.3rem',
-      lineHeight: '1.8',
-    }}
-  >
-    <li><strong>Coagulants:</strong> Facilitate the removal of suspended particles in water.</li>
-    <li><strong>Flocculants:</strong> Help clump together small particles for easier removal.</li>
-    <li><strong>Biocides:</strong> Eliminate harmful microorganisms in water systems.</li>
-    <li><strong>pH Adjusters:</strong> Balance acidity and alkalinity in water for optimal conditions.</li>
-  </ul>
-  <ul
-    style={{
-      paddingLeft: '1.5rem',
-      listStyleType: 'disc',
-      color: '#333',
-      fontSize: '1.3rem',
-      lineHeight: '1.8',
-    }}
-  >
-    <li><strong>Scale Inhibitors:</strong> Prevent scale buildup in pipes and equipment.</li>
-    <li><strong>Corrosion Inhibitors:</strong> Protect metal components from corrosion in water systems.</li>
-    <li><strong>Disinfectants:</strong> Kill bacteria and viruses to ensure safe drinking water.</li>
-    <li><strong>Defoamers:</strong> Reduce and prevent foam formation in industrial water systems.</li>
-  </ul>
-</div>
-
-          </div>
-        </section>
-
-        <section
-          style={{
-            padding: '4rem 2rem',
-            backgroundColor: '#ffffff',
-            lineHeight: '1.8',
-            fontFamily: "'Roboto', sans-serif",
-          }}
-        >
-          {/* Additional content can go here */}
-        </section>
-      </main>
-
-      <Footer11 />
-    </Fragment>
+    <BusinessLinePage
+      title="Water Treatment"
+      subtitle="Comprehensive chemical solutions for industrial, municipal and process water treatment applications."
+      heroImage="/img/cardimg/waterbss.jpg"
+      description="Yophiel Internationals offers a full-spectrum portfolio of water treatment chemicals designed to protect industrial infrastructure, ensure regulatory compliance and maximize system efficiency. Our solutions serve power generation, petrochemicals, pharmaceuticals, food & beverage, and municipal water treatment industries worldwide."
+      products={products}
+    />
   );
-};
-
-export default ProjectDetails;
+}
