@@ -270,39 +270,45 @@ export const serviceList9 = [{
 export const serviceList10 = [
   {
     id: 1,
-    linkUrl: '/oilfield',  // Change this to the actual route for the Oilfield page
+    linkUrl: '/oilfield',
     Icon: Script,
-    title: 'OILFIELD & REFINERY CHEMICALS',
+    title: 'OIL & GAS',
     backgroundImage: '/img/cardimg/Oilfileld.jpg',
   },
-  
   {
     id: 2,
-    linkUrl: '/lubricants',  // Change this to the actual route for the Lubricant page
+    linkUrl: '/lubricants',
     Icon: Verify,
-    title: 'LUBRICANTS & GREASE ADDITIVES',
+    title: 'LUBRICANTS & GREASE',
     backgroundImage: '/img/cardimg/lubricant.jpg',
   },
   {
     id: 3,
-    linkUrl: '/personal',  // Change this to the actual route for Personal & Home Care page
+    linkUrl: '/personal',
     Icon: CloudNetwork,
-    title: 'PERSONAL & HOME CARE',
+    title: 'HOME, PERSONAL & INDUSTRIAL CLEANING',
     backgroundImage: '/img/cardimg/images.jpg',
   },
   {
     id: 4,
-    linkUrl: '/plastics',  // Change this to the actual route for Plastics & Rubber page
+    linkUrl: '/plastics',
     Icon: Director,
-    title: 'PLASTICS & RUBBER CHEMICALS',
+    title: 'PLASTICS & RUBBER',
     backgroundImage: '/img/cardimg/plastic.jpg',
   },
   {
     id: 5,
-    linkUrl: '/treatment',  // Change this to the actual route for Water Treatment page
+    linkUrl: '/treatment',
     Icon: Setting,
-    title: 'WATER TREATMENT CHEMICALS',
+    title: 'WATER TREATMENT',
     backgroundImage: '/img/cardimg/water.jpg',
+  },
+  {
+    id: 6,
+    linkUrl: '/paints',
+    Icon: Setting,
+    title: 'PAINTS & COATINGS',
+    backgroundImage: '/img/cardimg/paints.jpg',
   },
 ];
 

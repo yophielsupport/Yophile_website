@@ -58,7 +58,7 @@ const Navbar = (props) => {
       <img
         alt="logo"
         src={`/img/Website/Page Logo 1.png`}
-        style={{ width: '100px', height: 'auto' }} // Adjust width and height as needed
+        style={{ width: '150px', height: 'auto' }} // Adjust width and height as needed
       />
     }
   />
@@ -183,7 +183,15 @@ const Navbar = (props) => {
     <Fragment>
       {stickyBox && <div style={{ paddingTop: sticky ? navbarRef.current?.clientHeight : 0 }} />}
 
-      <nav ref={navbarRef} className={sticky ? fixedClassName : navClassName} style={{ backgroundColor: '#F5F5F5' }}>
+      <nav
+        ref={navbarRef}
+        className={sticky ? fixedClassName : navClassName}
+        style={{
+          backgroundColor: sticky ? '#ffffff' : '#F5F5F5',
+          boxShadow: sticky ? '0 2px 20px rgba(0,0,0,0.10)' : 'none',
+          transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
+        }}
+      >
         {fancy ? (
           <div className="container">
             <div className="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
@@ -200,8 +208,7 @@ const Navbar = (props) => {
       {info && <Info />}
       {search && <Search />}
       {cart && <MiniCart />}
-      <div  style={{ borderBottom: '2px solid rgb(74, 226, 163)', margin: '0' }} />
-      <div></div>
+      <div style={{ height: '3px', background: 'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%)', margin: '0' }} />
     </Fragment>
   );
 };
