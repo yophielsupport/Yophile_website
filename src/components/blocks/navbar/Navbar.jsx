@@ -126,7 +126,7 @@ const Navbar = (props) => {
 
           <div className="offcanvas-footer d-lg-none mt-auto">
             <div>
-              <NextLink title="info@yophiel.net" className="link-inverse" href="mailto:info@yophiel.net" style={{ color: '#4A90E2' }} />
+              <NextLink title="sales@yophiel.net" className="link-inverse" href="mailto:sales@yophiel.net" style={{ color: '#4A90E2' }} />
               <br />
               <NextLink href="tel:9637422525" title="+91-9637422525" style={{ color: '#4A90E2' }} />
               <br />

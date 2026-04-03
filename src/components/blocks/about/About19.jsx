@@ -1,8 +1,4 @@
 import { Fragment } from 'react';
-import { Tiles11 } from 'components/elements/tiles';
-import ListColumn from 'components/reuseable/ListColumn'; // -------- data -------- //
-
-import { aboutList2, aboutList3 } from 'data/about';
 
 const About19 = () => {
   return <Fragment>
@@ -10,53 +6,47 @@ const About19 = () => {
         
 
         <div className="col-lg-11">
-          <h3 className="display-4 mb-2 text-uppercase  mb-5 text-center" style={{background:'linear-gradient(135deg, rgb(0, 166, 228) 0%, rgb(121, 191, 30) 100%)' , color:'white'}}> Welcome to the forefront of Chemicals and Engineering.</h3>
+          <h3 className="display-4 mb-2 mb-5 text-start" style={{fontWeight:'800'}}>
+            <span style={{color:'#000'}}>Energizing </span>
+            <span style={{background:'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(0,180,160) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text'}}>PEOPLE</span>
+            <span style={{color:'#000'}}> ... Energizing </span>
+            <span style={{background:'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(0,180,160) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text'}}>CHEMISTRY</span>
+          </h3>
           <p className="mb-6">
-<strong style={{background:'linear-gradient(135deg, rgb(0, 166, 228) 0%, rgb(121, 191, 30) 100%)' , color:'white'}}> Yophiel Internationals</strong>   is a global leader in chemical distribution and engineering services, established in India in 2023.
-  <br></br>
-  Built on ethics and integrity, we aim to lead the industry with excellence.
-  <br></br>
-  We offer energy management, maintenance contracts, tolling, blending, and raw material procurement.
-  <br></br>
-  Our expert team and global network provide specialized solutions to boost productivity and profitability.
-</p>
+            Welcome from the global arena of Chemicals and Engineering, where excellence, innovation and performance meet.
+            <br /><br />
+            <strong style={{color:'#000', fontWeight:'800'}}>Yophiel Internationals</strong> is an internationally recognized chemical distribution and engineering services company, having been established in the western region. Ethics and integrity are the cornerstones upon which this firm was built, and we will endeavour to lead the industry in everything we do.
+            <br /><br />
+            Our innovative and value-added services include energy management, annual maintenance contracts, tolling and blending, and the procurement of raw materials.
+            <br /><br />
+            Our strong technical team and allied suppliers within the industry, enables us to strive for our customers and offer a wide range of performance oriented products.
+            <br /><br />
+            Our wide global network, in-depth knowledge of the industry, and extensive range of products enable us to support our clients with specialized solutions that maximize productivity and profitability.
+          </p>
 
 
           {/* <ListColumn rowClass="gx-xl-8" list={aboutList2} /> */}
         </div>
       </div>
 
-      <div className="row gx-lg-8 gx-xl-12 gy-6 mb-14 mb-md-18">
-  {aboutList3.map(({ id, title, description }) => (
-    <div className="col-lg-4" key={id}>
-      <div className="d-flex flex-row">
-        <div>
-          {/* Apply the gradient to the circle */}
-          <div
-            className="icon btn btn-circle pe-none me-4"
-            style={{
-              background: 'linear-gradient(135deg, rgb(0, 166, 228) 0%, rgb(121, 191, 30) 100%)',
-              color: 'white', // Ensure the text is visible
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '40px', // Adjust size as needed
-              height: '40px', // Adjust size as needed
-              borderRadius: '50%', // Ensure it remains a circle
-            }}
-          >
-            <span className="number fs-18">{id}</span>
-          </div>
+      <div className="row gx-lg-8 gx-xl-12 gy-6 mb-10">
+        <div className="col-12">
+          <h5 style={{fontWeight:'800', textTransform:'uppercase', letterSpacing:'0.05em'}}>Our Vision</h5>
+          <p className="mb-0">We aspire to be global leaders in each of our chosen businesses by 2030.</p>
         </div>
-
-        <div>
-          <h4 >{title}</h4>
-          <p className="mb-2">{description}</p>
+        <div className="col-12">
+          <h5 style={{fontWeight:'800', textTransform:'uppercase', letterSpacing:'0.05em'}}>Our Mission</h5>
+          <p className="mb-0">To be the most reliable global company for customers and suppliers, that delivers value and maximizes prosperity through products and services.</p>
+        </div>
+        <div className="col-12">
+          <h5 style={{fontWeight:'800', textTransform:'uppercase', letterSpacing:'0.05em'}}>Our Values</h5>
+          <img
+            src="/img/photos/ourvalue.png"
+            alt="Our Values - Integrity, Responsibility, Excellence, Unity, Respectful"
+            style={{width:'100%', maxWidth:'700px', marginTop:'12px', display:'block'}}
+          />
         </div>
       </div>
-    </div>
-  ))}
-</div>
     </Fragment>;
 };
 

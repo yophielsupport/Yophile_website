@@ -25,15 +25,15 @@ export const aboutList2 = [
 export const aboutList3 = [{
   id: 1,
   title: 'Our Vision',
-  description: `To lead the global chemical distribution and engineering services industry through innovation, excellence, and performance.`
+  description: `We aspire to be global leaders in each of our chosen businesses by 2030.`
 }, {
   id: 2,
   title: 'Our Mission',
-  description: `To deliver innovative, value-added services and specialized solutions that maximize client productivity and profitability.`
+  description: `To be the most reliable global company for customers and suppliers, that delivers value and maximizes prosperity through products and services.`
 }, {
   id: 3,
   title: 'Our Values',
-  description: `Ethics, integrity, innovation, and customer-centric excellence.`
+  description: `Integrity, Responsibility, Excellence, Unity, and Respectful.`
 }]; // used in the about-20, about-21 block
 
 export const aboutList4 = [{
