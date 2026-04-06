@@ -1,14 +1,26 @@
 import BusinessLinePage from 'components/common/BusinessLinePage';
 
 const products = [
-  { icon: '🌊', name: 'Coagulants', description: 'Facilitate rapid removal of suspended particles, colloids and turbidity from industrial and municipal water.' },
-  { icon: '🔗', name: 'Flocculants', description: 'Aggregate fine particles into larger, settleable flocs for efficient clarification and sludge dewatering.' },
-  { icon: '🛡️', name: 'Biocides', description: 'Eliminate harmful bacteria, algae and microorganisms in cooling towers, process water and distribution systems.' },
-  { icon: '⚗️', name: 'pH Adjusters', description: 'Balance acidity and alkalinity to protect equipment and optimize chemical treatment efficiency.' },
-  { icon: '🔬', name: 'Scale Inhibitors', description: 'Prevent calcium carbonate, sulphate and silica scale buildup in pipes, heat exchangers and membrane systems.' },
-  { icon: '⚙️', name: 'Corrosion Inhibitors', description: 'Protect carbon steel, copper alloys and other metals from corrosion in recirculating and open water systems.' },
-  { icon: '💧', name: 'Disinfectants', description: 'Ensure safe, potable water by eliminating bacteria and viruses in drinking water and wastewater systems.' },
-  { icon: '🫧', name: 'Defoamers', description: 'Control and eliminate foam in industrial water systems, wastewater treatment and process applications.' },
+  { name: 'Antifoams' },
+  { name: 'Biocides' },
+  { name: 'Boiler Water Chemicals' },
+  { name: 'Coagulants' },
+  { name: 'Corrosion Inhibitors' },
+  { name: 'Flocculants' },
+  { name: 'Neutralizing Agents' },
+  { name: 'Oxidants' },
+  { name: 'Oxygen Scavengers' },
+  { name: 'pH Conditioners' },
+  { name: 'Resin Cleaners' },
+  { name: 'Scale Inhibitors' },
+  { name: 'Disinfectants' },
+  { name: 'Cooling Water Chemicals' },
+  { name: 'Boiler Treatment Chemicals' },
+  { name: 'Dewatering Agents' },
+  { name: 'Antiscalant' },
+  { name: 'Reverse Osmosis Membrane Treatment' },
+  { name: 'Sewage Water Treatment Chemicals' },
+  { name: 'Other Chemicals' },
 ];
 
 export default function Treatment() {

@@ -125,7 +125,7 @@ export default function ContactTwo() {
         <div className="container ct-hero-content">
           <p className="ct-hero-label">We'd Love to Hear from You</p>
           <h1 className="ct-hero-title">Get in Touch</h1>
-          <p className="ct-hero-sub">Reach out to our team for technical enquiries, product information, partnerships or general questions.</p>
+          <p className="ct-hero-sub">Reach out to our team for technical assistance, product information, & inquiries.</p>
         </div>
       </section>
 
@@ -138,7 +138,7 @@ export default function ContactTwo() {
             <div className="col-lg-4">
               <div className="ct-info-panel">
                 <h3 className="ct-info-heading">Contact Information</h3>
-                <p className="ct-info-sub">Our team is available during business hours. We typically respond within 24 hours.</p>
+                {/* <p className="ct-info-sub">Our team is available during business hours. We typically respond within 24 hours.</p> */}
 
                 {contactDetails.map(({ icon, label, lines }) => (
                   <div className="ct-info-item" key={label}>
@@ -152,26 +152,40 @@ export default function ContactTwo() {
 
                 <hr className="ct-info-divider" />
                 <p className="ct-social-label">Follow Us</p>
-                <div style={{ display: 'flex', gap: '14px' }}>
-                  {[
-                    { label: 'in', href: '#' },
-                    { label: 'tw', href: '#' },
-                  ].map(({ label, href }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      style={{
-                        width: '36px', height: '36px', borderRadius: '50%',
-                        background: 'rgba(255,255,255,0.08)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        color: 'rgba(255,255,255,0.7)', fontSize: '12px', fontWeight: '700',
-                        textTransform: 'uppercase', textDecoration: 'none',
-                        transition: 'background 0.2s',
-                      }}
-                    >
-                      {label}
-                    </a>
-                  ))}
+                <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com/company/yophiel-internationals"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="LinkedIn"
+                    style={{
+                      width: '38px', height: '38px', borderRadius: '50%',
+                      background: 'rgba(255,255,255,0.08)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      textDecoration: 'none', transition: 'background 0.2s',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = '#0A66C2'}
+                    onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.85)">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
+                  {/* Twitter / X */}
+                  <a
+                    href="#"
+                    style={{
+                      width: '38px', height: '38px', borderRadius: '50%',
+                      background: 'rgba(255,255,255,0.08)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: 'rgba(255,255,255,0.7)', fontSize: '12px', fontWeight: '700',
+                      textTransform: 'uppercase', textDecoration: 'none',
+                      transition: 'background 0.2s',
+                    }}
+                  >
+                    tw
+                  </a>
                 </div>
               </div>
             </div>

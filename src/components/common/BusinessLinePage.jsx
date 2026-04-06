@@ -7,13 +7,16 @@ import PageProgress from 'components/common/PageProgress';
 const BG = 'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%)';
 
 /* ─── Product Card ─────────────────────────────────── */
-const ProductCard = ({ icon, name, description }) => (
+const GearIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="blp-gear-icon">
+    <path d="M12 15.5A3.5 3.5 0 018.5 12 3.5 3.5 0 0112 8.5a3.5 3.5 0 013.5 3.5 3.5 3.5 0 01-3.5 3.5m7.43-2.92c.04-.33.07-.68.07-1.08s-.03-.74-.07-1.08l2.32-1.81c.21-.16.27-.46.13-.7l-2.2-3.81c-.13-.25-.42-.33-.67-.25l-2.74 1.1c-.57-.44-1.18-.79-1.85-1.07L14.92 2.1c-.05-.27-.27-.46-.55-.46h-4.4c-.28 0-.5.19-.55.46l-.41 2.74c-.67.28-1.28.63-1.85 1.07l-2.74-1.1c-.25-.08-.54 0-.67.25l-2.2 3.81c-.14.24-.08.54.13.7l2.32 1.81C4.03 11.26 4 11.61 4 12s.03.74.07 1.08L1.75 14.9c-.21.16-.27.46-.13.7l2.2 3.81c.13.25.42.33.67.25l2.74-1.1c.57.44 1.18.79 1.85 1.07l.41 2.74c.05.27.27.46.55.46h4.4c.28 0 .5-.19.55-.46l.41-2.74c.67-.28 1.28-.63 1.85-1.07l2.74 1.1c.25.08.54 0 .67-.25l2.2-3.81c.14-.24.08-.54-.13-.7l-2.32-1.81z" />
+  </svg>
+);
+
+const ProductCard = ({ name }) => (
   <div className="blp-card">
-    <div className="blp-icon-wrap">
-      <span className="blp-icon">{icon}</span>
-    </div>
-    <h5 className="blp-card-title">{name}</h5>
-    <p className="blp-card-text">{description}</p>
+    <GearIcon />
+    <span className="blp-card-title">{name}</span>
   </div>
 );
 
@@ -113,78 +116,68 @@ const BusinessLinePage = ({ title, subtitle, heroImage, description, products })
 
         /* ── Product Grid ── */
         .blp-grid-section {
-          background: #f7f9fc;
+          background: #fff;
           padding: 72px 0 80px;
         }
-        .blp-grid-label {
-          font-size: 11px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.22em;
-          color: rgb(0,166,228);
-          margin-bottom: 10px;
-        }
-        .blp-grid-heading {
-          font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+        .blp-services-heading {
+          font-size: clamp(1.6rem, 2.8vw, 2.3rem);
           font-weight: 800;
           color: #0d1b2a;
-          margin-bottom: 8px;
+          border-left: 5px solid rgb(0,166,228);
+          padding-left: 18px;
+          margin-bottom: 12px;
+          line-height: 1.2;
         }
-        .blp-grid-sub {
+        .blp-services-intro {
           font-size: 15px;
+          color: #4a5568;
+          line-height: 1.85;
+          margin-bottom: 10px;
+        }
+        .blp-services-detail {
+          font-size: 13px;
+          font-weight: 700;
           color: #6b7a8d;
-          margin-bottom: 48px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-bottom: 40px;
         }
         .blp-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
         }
-        @media (max-width: 1100px) { .blp-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 900px) { .blp-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { .blp-grid { grid-template-columns: 1fr; } }
 
         .blp-card {
           background: #fff;
-          border-radius: 14px;
-          padding: 32px 24px 28px;
-          box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          position: relative;
-          overflow: hidden;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 10px;
+          padding: 18px 20px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+          cursor: default;
         }
-        .blp-card::after {
-          content: '';
-          position: absolute;
-          bottom: 0; left: 0; right: 0; height: 3px;
-          background: ${BG};
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.35s ease;
+        .blp-card:hover {
+          border-color: rgb(0,166,228);
+          box-shadow: 0 4px 18px rgba(0,166,228,0.13);
+          transform: translateY(-3px);
         }
-        .blp-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
-        .blp-card:hover::after { transform: scaleX(1); }
-        .blp-icon-wrap {
-          width: 52px; height: 52px;
-          border-radius: 12px;
-          background: linear-gradient(135deg, #eef9ff 0%, #f3fff0 100%);
-          display: flex; align-items: center; justify-content: center;
-          margin-bottom: 18px;
-          font-size: 24px;
+        .blp-gear-icon {
+          color: #94a3b8;
+          flex-shrink: 0;
+          transition: color 0.25s;
         }
+        .blp-card:hover .blp-gear-icon { color: rgb(0,166,228); }
         .blp-card-title {
-          font-size: 14px;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          color: #0d1b2a;
-          margin-bottom: 10px;
-          line-height: 1.4;
-        }
-        .blp-card-text {
-          font-size: 13.5px;
-          color: #6b7a8d;
-          line-height: 1.75;
+          font-size: 14.5px;
+          font-weight: 600;
+          color: #1e293b;
           margin: 0;
+          line-height: 1.4;
         }
 
         /* ── CTA Strip ── */
@@ -249,26 +242,24 @@ const BusinessLinePage = ({ title, subtitle, heroImage, description, products })
       </div>
 
       {/* ── INTRO ──────────────────────────────────────── */}
-      <div className="blp-intro">
+      {/* <div className="blp-intro">
         <div className="container">
           <p className="blp-intro-label">Our Expertise</p>
           <h2 className="blp-intro-title">{title}</h2>
           <p className="blp-intro-text">{description}</p>
           <div className="blp-intro-bar" />
         </div>
-      </div>
+      </div> */}
 
       {/* ── PRODUCTS GRID ──────────────────────────────── */}
       <div className="blp-grid-section">
         <div className="container">
-          <div className="text-center mb-4">
-            <p className="blp-grid-label">Product Range</p>
-            <h3 className="blp-grid-heading">Specialized Chemical Solutions</h3>
-            <p className="blp-grid-sub">Tailored formulations engineered for performance and reliability</p>
-          </div>
+          <h2 className="blp-services-heading">Products We Offer</h2>
+          <p className="blp-services-intro">{description}</p>
+          <p className="blp-services-detail">Details As Per Follows:</p>
           <div className="blp-grid">
-            {products.map(({ name, icon, description: desc }) => (
-              <ProductCard key={name} name={name} icon={icon} description={desc} />
+            {products.map(({ name }) => (
+              <ProductCard key={name} name={name} />
             ))}
           </div>
         </div>
@@ -278,7 +269,7 @@ const BusinessLinePage = ({ title, subtitle, heroImage, description, products })
       <div className="blp-cta">
         <div className="container">
           <h3 className="blp-cta-title">Need Technical Assistance?</h3>
-          <p className="blp-cta-sub">Our specialist team is ready to recommend the right solution for your application.</p>
+          <p className="blp-cta-sub">Our specialist team is ready to recommend the right product for your application.</p>
           <Link href="/contact-2" className="blp-cta-btn">Get in Touch</Link>
         </div>
       </div>

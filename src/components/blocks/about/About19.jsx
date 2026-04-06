@@ -112,7 +112,7 @@ const About19 = () => {
 
           <p style={{ color: '#111', fontSize: '16px', lineHeight: '1.9', marginBottom: '18px' }}>
             Welcome to the global arena of Chemicals and Engineering — where{' '}
-            <strong>excellence, innovation and performance</strong> converge to shape a more
+            <strong>Products, Knowledge and performance</strong> converge to shape a more
             sustainable and technologically advanced future.
           </p>
           <p style={{ color: '#111', fontSize: '16px', lineHeight: '1.9', marginBottom: '18px' }}>
@@ -122,8 +122,7 @@ const About19 = () => {
             will always endeavour to lead the industry in everything we do.
           </p>
           <p style={{ color: '#111', fontSize: '16px', lineHeight: '1.9', marginBottom: '18px' }}>
-            Our innovative and value-added services include energy management, annual maintenance
-            contracts, tolling &amp; blending, and the procurement of raw materials. Our strong
+            Our innovative and value-added services include Formulation Chemistry support, Blending Services , Contract Manufacturing, and the procurement of raw materials. Our strong
             technical team and allied suppliers enable us to offer a wide range of
             performance-oriented products.
           </p>

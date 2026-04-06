@@ -21,9 +21,9 @@ const values = [
   },
   {
     num: '03',
-    title: 'Products',
+    title: 'Excellence',
     icon: '◈',
-    text: 'We are relentless in pursuing the highest standards of product quality, performance and innovation in everything we deliver.',
+    text: 'We are relentless in pursuing the highest standards of quality, performance and innovation in everything we deliver.',
   },
   {
     num: '04',
@@ -33,9 +33,9 @@ const values = [
   },
   {
     num: '05',
-    title: 'Knowledge',
+    title: 'Respectful',
     icon: '◈',
-    text: 'We invest in expertise, technical depth and continuous learning to bring informed, trusted guidance to every client engagement.',
+    text: 'We treat every individual — clients, partners, and colleagues — with dignity, empathy and genuine respect in all interactions.',
   },
 ];
 
@@ -139,7 +139,7 @@ export default function Ourvalues() {
               <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}>
                 <img
                   src="/img/photos/ourvalue.png"
-                  alt="Our Values – Integrity, Responsibility, Products, Unity, Knowledge"
+                  alt="Our Values – Integrity, Responsibility, Excellence, Unity, Respectful"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>

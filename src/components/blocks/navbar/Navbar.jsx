@@ -37,11 +37,11 @@ const Navbar = (props) => {
       <style jsx global>{`
         /* ── Nav links ── */
         .navbar .nav-link {
-          font-size: 15.5px !important;
+          font-size: 17px !important;
           font-weight: 700 !important;
           color: #1a1a2e !important;
           letter-spacing: 0.03em;
-          padding: 10px 20px !important;
+          padding: 10px 22px !important;
           transition: color 0.2s ease !important;
         }
         .navbar .nav-link:hover {
@@ -134,7 +134,10 @@ const Navbar = (props) => {
         </div>
 
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <NavLinko title="Home" href="/" className="nav-link" />
+            </li>
             <li className="nav-item dropdown">
               <DropdownToggleLink title="About Us" className="nav-link dropdown-toggle" />
               <ul className="dropdown-menu">
@@ -156,11 +159,12 @@ const Navbar = (props) => {
             </li>
 
             <li className="nav-item dropdown">
-              <DropdownToggleLink title="Resources" className="nav-link dropdown-toggle" />
+              <DropdownToggleLink title="Services" className="nav-link dropdown-toggle" />
               <ul className="dropdown-menu">
-                <ListItemLink href="/engneering"  title="Engineering Services"  linkClassName="dropdown-item" />
-                <ListItemLink href="/procurement" title="Procurement"           linkClassName="dropdown-item" />
-                <ListItemLink href="/contracts"   title="Maintenance Contracts" linkClassName="dropdown-item" />
+                <ListItemLink href="/engneering"  title="Engineering Services"          linkClassName="dropdown-item" />
+                <ListItemLink href="/procurement" title="Procurement"                   linkClassName="dropdown-item" />
+                <ListItemLink href="/engneering"  title="Formulation Chemistry Support" linkClassName="dropdown-item" />
+                <ListItemLink href="/engneering"  title="Blending Solutions"            linkClassName="dropdown-item" />
               </ul>
             </li>
 

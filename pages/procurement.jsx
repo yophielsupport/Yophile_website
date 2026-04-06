@@ -7,12 +7,15 @@ import PageProgress from 'components/common/PageProgress';
 const BG = 'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%)';
 
 const pillars = [
-  { icon: '🔍', title: 'Strategic Sourcing', desc: 'Global supplier identification and qualification to secure best-in-class materials at competitive prices.' },
-  { icon: '✅', title: 'Quality Assurance', desc: 'Rigorous inspection protocols, third-party testing and documentation to meet international quality standards.' },
-  { icon: '📋', title: 'Compliance Management', desc: 'Full compliance with safety, environmental and regulatory standards across all procurement activities.' },
-  { icon: '🤝', title: 'Supplier Relationships', desc: 'Long-term partnerships with trusted, vetted suppliers to ensure supply chain reliability and continuity.' },
-  { icon: '🚢', title: 'Logistics & Delivery', desc: 'End-to-end logistics coordination — from port of origin to final delivery at your facility.' },
-  { icon: '💰', title: 'Cost Optimization', desc: 'Competitive pricing through volume leverage, supplier negotiations and smart procurement strategies.' },
+  { title: 'Strategic Sourcing' },
+  { title: 'Quality Assurance' },
+  { title: 'Compliance Management' },
+  { title: 'Supplier Relationships' },
+  { title: 'Logistics & Delivery' },
+  { title: 'Cost Optimization' },
+  { title: 'Supplier Qualification' },
+  { title: 'Documentation & Compliance' },
+  { title: 'Import / Export Management' },
 ];
 
 export default function Procurement() {
@@ -35,18 +38,29 @@ export default function Procurement() {
         .proc-heading { font-size: clamp(1.5rem,2.5vw,2.1rem); font-weight: 800; color: #0d1b2a; margin-bottom: 18px; }
         .proc-text { font-size: 15.5px; color: #4a5568; line-height: 1.9; margin-bottom: 14px; }
 
-        .proc-grid-section { background: #f7f9fc; padding: 72px 0 80px; }
-        .proc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .proc-grid-section { background: #fff; padding: 72px 0 80px; }
+        .proc-services-heading { font-size: clamp(1.6rem,2.8vw,2.3rem); font-weight: 800; color: #0d1b2a; border-left: 5px solid rgb(0,166,228); padding-left: 18px; margin-bottom: 12px; line-height: 1.2; }
+        .proc-services-intro { font-size: 15px; color: #4a5568; line-height: 1.85; margin-bottom: 10px; }
+        .proc-services-detail { font-size: 13px; font-weight: 700; color: #6b7a8d; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 40px; }
+        .proc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
         @media(max-width:900px){.proc-grid{grid-template-columns:repeat(2,1fr);}}
         @media(max-width:600px){.proc-grid{grid-template-columns:1fr;}}
 
-        .proc-card { background: #fff; border-radius: 14px; padding: 32px 24px 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-        .proc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: ${BG}; transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
-        .proc-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.11); }
-        .proc-card:hover::before { transform: scaleX(1); }
-        .proc-card-icon { font-size: 28px; margin-bottom: 16px; }
-        .proc-card-title { font-size: 13.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #0d1b2a; margin-bottom: 10px; }
-        .proc-card-text { font-size: 13.5px; color: #6b7a8d; line-height: 1.75; margin: 0; }
+        .proc-card {
+          background: #fff;
+          border: 1.5px solid #e2e8f0;
+          border-radius: 10px;
+          padding: 18px 20px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+          cursor: default;
+        }
+        .proc-card:hover { border-color: rgb(0,166,228); box-shadow: 0 4px 18px rgba(0,166,228,0.13); transform: translateY(-3px); }
+        .proc-gear { color: #94a3b8; flex-shrink: 0; transition: color 0.25s; }
+        .proc-card:hover .proc-gear { color: rgb(0,166,228); }
+        .proc-card-title { font-size: 14.5px; font-weight: 600; color: #1e293b; margin: 0; line-height: 1.4; }
 
         .proc-cta { background: ${BG}; padding: 60px 0; text-align: center; }
         .proc-cta-title { font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 800; color: #fff; margin-bottom: 10px; }
@@ -64,7 +78,7 @@ export default function Procurement() {
           <div className="container">
             <div className="proc-bc">
               <Link href="/" style={{ color: 'inherit' }}>Home</Link>
-              <span>›</span><span>Resources</span><span>›</span>
+              <span>›</span><span>Services</span><span>›</span>
               <span style={{ color: '#fff' }}>Procurement</span>
             </div>
             <h1 className="proc-title">Procurement</h1>
@@ -93,17 +107,18 @@ export default function Procurement() {
 
       <div className="proc-grid-section">
         <div className="container">
-          <div className="text-center mb-5">
-            <p className="proc-label">Our Pillars</p>
-            <h3 style={{ fontSize: 'clamp(1.4rem,2.2vw,1.9rem)', fontWeight: '800', color: '#0d1b2a', marginBottom: '8px' }}>How We Deliver Value</h3>
-            <p style={{ fontSize: '15px', color: '#6b7a8d' }}>Six principles that define our procurement excellence</p>
-          </div>
+          <h2 className="proc-services-heading">Services We Provide</h2>
+          <p className="proc-services-intro">
+            Yophiel Internationals delivers end-to-end procurement services designed to simplify your supply chain, reduce costs and ensure the timely delivery of high-quality materials. We leverage our extensive global supplier network to source specialty chemicals, raw materials and industrial equipment.
+          </p>
+          <p className="proc-services-detail">Details As Per Follows:</p>
           <div className="proc-grid">
-            {pillars.map(({ icon, title, desc }) => (
+            {pillars.map(({ title }) => (
               <div className="proc-card" key={title}>
-                <div className="proc-card-icon">{icon}</div>
-                <div className="proc-card-title">{title}</div>
-                <p className="proc-card-text">{desc}</p>
+                <svg className="proc-gear" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 15.5A3.5 3.5 0 018.5 12 3.5 3.5 0 0112 8.5a3.5 3.5 0 013.5 3.5 3.5 3.5 0 01-3.5 3.5m7.43-2.92c.04-.33.07-.68.07-1.08s-.03-.74-.07-1.08l2.32-1.81c.21-.16.27-.46.13-.7l-2.2-3.81c-.13-.25-.42-.33-.67-.25l-2.74 1.1c-.57-.44-1.18-.79-1.85-1.07L14.92 2.1c-.05-.27-.27-.46-.55-.46h-4.4c-.28 0-.5.19-.55.46l-.41 2.74c-.67.28-1.28.63-1.85 1.07l-2.74-1.1c-.25-.08-.54 0-.67.25l-2.2 3.81c-.14.24-.08.54.13.7l2.32 1.81C4.03 11.26 4 11.61 4 12s.03.74.07 1.08L1.75 14.9c-.21.16-.27.46-.13.7l2.2 3.81c.13.25.42.33.67.25l2.74-1.1c.57.44 1.18.79 1.85 1.07l.41 2.74c.05.27.27.46.55.46h4.4c.28 0 .5-.19.55-.46l.41-2.74c.67-.28 1.28-.63 1.85-1.07l2.74 1.1c.25.08.54 0 .67-.25l2.2-3.81c.14-.24.08-.54-.13-.7l-2.32-1.81z" />
+                </svg>
+                <span className="proc-card-title">{title}</span>
               </div>
             ))}
           </div>

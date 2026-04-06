@@ -55,6 +55,16 @@ const featuredProducts = [
       </svg>
     ),
   },
+  {
+    name: 'Honey & Natural Ingredients',
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3 5h4l-2.5 4 1.5 5-6-2-6 2 1.5-5L5 7h4l3-5z" fill="rgba(255,255,255,0.25)" />
+        <path d="M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3" />
+        <path d="M12 15v3" />
+      </svg>
+    ),
+  },
 ];
 
 /* ─── Hexagon Cell ─────────────────────────────────────────── */
@@ -282,14 +292,13 @@ const Services20 = () => {
           ))}
         </div>
 
-        {/* Row 2 — 2 hexagons, centred between the gaps above */}
+        {/* Row 2 — 3 hexagons */}
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
             gap: '32px',
             flexWrap: 'wrap',
-            marginTop: '-22px',
           }}
         >
           {featuredProducts.slice(3).map(({ name, icon }) => (

@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Fragment, useEffect, useState } from 'react';
-import ThemeProvider from 'theme/ThemeProvider'; // animate css
+import ThemeProvider from 'theme/ThemeProvider';
+import SplashScreen from 'components/common/SplashScreen'; // animate css
 
 import 'animate.css'; // import swiper css
 
@@ -26,7 +27,8 @@ function MyApp({
   const {
     pathname
   } = useRouter();
-  const [loading, setLoading] = useState(true); // added bootstrap functionality
+  const [loading, setLoading] = useState(true);
+  const [splash, setSplash] = useState(true); // added bootstrap functionality
 
   useEffect(() => {
     if (typeof window !== 'undefined') import('bootstrap');
@@ -53,10 +55,8 @@ function MyApp({
       </Head>
 
       <ThemeProvider>
-        {
-        /* <div className="page-loader" /> */
-      }
-        {loading ? <div className="page-loader" /> : <Component {...pageProps} />}
+        {splash && <SplashScreen onDone={() => setSplash(false)} />}
+        {!loading && <Component {...pageProps} />}
       </ThemeProvider>
     </Fragment>;
 }

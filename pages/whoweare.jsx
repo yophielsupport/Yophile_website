@@ -8,8 +8,8 @@ const BG = 'linear-gradient(135deg, rgb(0,166,228) 0%, rgb(121,191,30) 100%)';
 
 const stats = [
   { value: '2023', label: 'Established' },
-  { value: '20+', label: 'Product Lines' },
-  { value: '2', label: 'Global Offices' },
+  { value: '50+', label: 'Product Lines' },
+  { value: '02', label: 'Global Offices' },
   { value: '100%', label: 'Ethics Driven' },
 ];
 
@@ -42,8 +42,8 @@ export default function Whoweare() {
           line-height: 1.1; margin-bottom: 20px;
         }
         .wwa-hero-sub {
-          font-size: 17px; color: rgba(255,255,255,0.75); max-width: 580px;
-          line-height: 1.8; margin-bottom: 36px;
+          font-size: 20px; color: rgba(255,255,255,0.75); max-width: 580px;
+          line-height: 1.3; margin-bottom: 40px;
         }
         .wwa-stat-row {
           display: flex; gap: 40px; flex-wrap: wrap; margin-top: 48px;
@@ -97,16 +97,14 @@ export default function Whoweare() {
       {/* ── HERO ── */}
       <section className="wwa-hero">
         <div className="container wwa-hero-content">
-          <p className="wwa-label">About Yophiel Internationals</p>
+          {/* <p className="wwa-label">About Yophiel Internationals</p> */}
           <h1 className="wwa-hero-title">
-            Energizing People.<br />Energizing Chemistry.
+            Energizing People for growth.
           </h1>
           <p className="wwa-hero-sub">
-            An internationally recognized chemical distribution and engineering services company — built on ethics, driven by innovation, and committed to delivering value across the globe.
+            Emerging Global Chemical Distribution and Engineering Company.
           </p>
-          <Link href="/contact-2" className="wwa-cta-btn" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,0.4)', backdropFilter: 'blur(8px)' }}>
-            Get in Touch
-          </Link>
+          
 
           <div className="wwa-stat-row">
             {stats.map(({ value, label }) => (
@@ -126,15 +124,19 @@ export default function Whoweare() {
             <div className="col-lg-6">
               <p className="wwa-section-label">Who We Are</p>
               <div className="wwa-accent" />
-              <h2 className="wwa-heading">A Global Leader in Chemical Distribution & Engineering</h2>
+              <h2 className="wwa-heading">A Global Leader in Chemical Distribution & Formulation</h2>
+              {/* <p className="wwa-body">
+                Welcome to the global arena of Chemicals and Engineering — where Products, Knowledge and performance converge to shape a more sustainable and technologically advanced future.
+              </p> */}
               <p className="wwa-body">
-                Welcome to the global arena of Chemicals and Engineering — where excellence, innovation and performance converge to shape a more sustainable and technologically advanced future.
-              </p>
-              <p className="wwa-body">
-                <strong>Yophiel Internationals</strong> is an internationally recognized chemical distribution and engineering services company, established in the western region of India. Ethics and integrity are the cornerstones upon which this firm was built — and we will always endeavour to lead the industry in everything we do.
+                <strong>Yophiel Internationals</strong> is an internationally recognized chemical distribution and engineering services company, established in the western region. Ethics and integrity are the cornerstones upon which this firm was built — and we will always endeavour to lead the industry in everything we do.
               </p>
               <p className="wwa-body" style={{ marginBottom: 0 }}>
-                Our innovative and value-added services include energy management, annual maintenance contracts, tolling &amp; blending, and the procurement of raw materials. Our wide global network and in-depth industry knowledge allow us to support clients with specialized solutions that maximize productivity and profitability.
+                Our innovative and value-added services include energy management, annual maintenance contracts, tolling & blending, and the procurement of raw materials. Our strong technical team and allied suppliers enable us to offer a wide range of performance-oriented products.
+              </p>
+              <br />
+              <p className="wwa-body">
+                Our wide global network, in-depth industry knowledge, and extensive product range allow us to support clients with specialized solutions that maximize productivity and profitability.
               </p>
             </div>
             <div className="col-lg-5 offset-lg-1">
@@ -151,9 +153,9 @@ export default function Whoweare() {
         <div className="container">
           <div className="text-center mb-5">
             <p className="wwa-section-label">Our Foundation</p>
-            <h2 className="wwa-heading" style={{ margin: '0 auto' }}>Vision, Mission & Values</h2>
+            <h2 className="wwa-heading" style={{ margin: '0 auto' }}>Vision & Mission</h2>
           </div>
-          <div className="row gy-4">
+          <div className="row gy-2">
             {[
               {
                 num: '01',
@@ -165,11 +167,11 @@ export default function Whoweare() {
                 title: 'Our Mission',
                 text: 'To be the most reliable global company for customers and suppliers, delivering value and maximizing prosperity through world-class products and services.',
               },
-              {
-                num: '03',
-                title: 'Our Values',
-                text: 'Integrity · Responsibility · Products · Unity · Knowledge — these are not just words, but the principles that guide every decision and relationship we build.',
-              },
+              // {
+              //   num: '03',
+              //   title: 'Our Values',
+              //   text: 'Integrity · Responsibility · Products · Unity · Knowledge — these are not just words, but the principles that guide every decision and relationship we build.',
+              // },
             ].map(({ num, title, text }) => (
               <div className="col-md-4" key={title}>
                 <div className="wwa-card">

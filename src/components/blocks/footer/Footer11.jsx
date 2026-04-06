@@ -17,7 +17,7 @@ const Footer11 = () => {
               style={{ width: '140px', height: 'auto' }}
             />
             <p className="mb-4">
-              Proud Trade Partner <br />
+              Proud Trade Partner  With<br />
               <strong>S&P Global Metals Award Winner</strong>
               <br /> <strong>2020 Company</strong> based in
               <br /> <strong>Switzerland.</strong>
@@ -27,22 +27,43 @@ const Footer11 = () => {
 
           {/* Head Office - INDIA */}
           <div className="widget" style={{ flex: '1 1 20%', minWidth: '200px' }}>
-            <h4 className="widget-title mb-3" style={{ color: '#111' }}>Head Office - INDIA</h4>
-            <address className="pe-xl-15 pe-xxl-17">
-              P. O. Box 411023, West Coast Park, Pune, MH, India.
+            <h4 className="widget-title mb-3" style={{ color: '#111', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              Head Office
+              <span style={{ fontSize: '20px' }}>🇮🇳</span>
+            </h4>
+            <address className="pe-xl-15 pe-xxl-17" style={{ display: 'flex', gap: '6px', alignItems: 'flex-start' }}>
+              <span style={{ fontSize: '16px', flexShrink: 0, marginTop: '1px' }}>📍</span>
+              <span>P. O. Box 411023, West Coast Park, Pune, MH, India.</span>
             </address>
             <NextLink title="sales@yophiel.net" href="mailto:sales@yophiel.net" className="link-body" style='' />
             <br /> +91 9637 422525
           </div>
 
-          {/* Communication Office - UAE */}
+          {/* UAE Office */}
           <div className="widget" style={{ flex: '1 1 20%', minWidth: '200px' }}>
-            <h4 className="widget-title mb-3" style={{ color: '#111' }}>Communication Office - UAE</h4>
-            <address className="pe-xl-15 pe-xxl-17">
-              WH 07, BLOCK 07, Industrial Area 2, Ajman - UAE.
+            <h4 className="widget-title mb-3" style={{ color: '#111', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              UAE
+              <span style={{ fontSize: '20px' }}>🇦🇪</span>
+            </h4>
+            <address className="pe-xl-15 pe-xxl-17" style={{ display: 'flex', gap: '6px', alignItems: 'flex-start' }}>
+              <span style={{ fontSize: '16px', flexShrink: 0, marginTop: '1px' }}>📍</span>
+              <span>WH 07, BLOCK 07, Industrial Area 2, Ajman - UAE.</span>
             </address>
             <NextLink title="sales@yophiel.net" href="mailto:sales@yophiel.net" className="link-body" />
             <br /> +971 509014345
+          </div>
+
+          {/* Kingdom of Saudi Arabia */}
+          <div className="widget" style={{ flex: '1 1 20%', minWidth: '200px' }}>
+            <h4 className="widget-title mb-3" style={{ color: '#111', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              Kingdom of Saudi Arabia
+              <span style={{ fontSize: '20px' }}>🇸🇦</span>
+            </h4>
+            <address className="pe-xl-15 pe-xxl-17" style={{ display: 'flex', gap: '6px', alignItems: 'flex-start' }}>
+              <span style={{ fontSize: '16px', flexShrink: 0, marginTop: '1px' }}>📍</span>
+              <span>Riyadh, Kingdom of Saudi Arabia.</span>
+            </address>
+            <NextLink title="sales@yophiel.net" href="mailto:sales@yophiel.net" className="link-body" />
           </div>
 
           {/* Learn More Links */}
