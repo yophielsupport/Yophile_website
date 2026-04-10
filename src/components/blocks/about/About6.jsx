@@ -19,14 +19,13 @@ const About6 = () => {
 
         <p className="lead fs-lg">
           Welcome to the global arena of chemicals, engineering, and resource management, where
-          Products, Knowledge , and high-performance solutions converge to shape a more sustainable
-          and technologically advanced future.
+          Products, Knowledge , and high-performance solutions converge to shape a more sustainable future.
         </p>
 
         <p className="lead mb-6">
           Yophiel Internationals is an internationally recognized chemical distribution and engineering 
           services firm that stands at the forefront of industry expertise, operational integrity, and 
-          unparalleled client support. Established in the western region of India in 2023, we bring 
+          unparalleled client support. Established in the western region of India, we bring 
           together a team of dedicated professionals who are not only skilled engineers, chemists, and 
           logistics experts, but also strategic thinkers committed to driving growth and delivering 
           tangible value to every stakeholder we serve.

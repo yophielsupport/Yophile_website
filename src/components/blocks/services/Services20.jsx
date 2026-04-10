@@ -56,7 +56,7 @@ const featuredProducts = [
     ),
   },
   {
-    name: 'Honey & Natural Ingredients',
+    name: 'Engineering & Blending Solutions',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l3 5h4l-2.5 4 1.5 5-6-2-6 2 1.5-5L5 7h4l3-5z" fill="rgba(255,255,255,0.25)" />

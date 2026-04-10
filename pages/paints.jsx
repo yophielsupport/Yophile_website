@@ -37,7 +37,7 @@ export default function Paints() {
     <BusinessLinePage
       title="Paints & Coatings"
       subtitle="Specialty raw materials and additives for decorative, industrial and protective coatings formulations."
-      heroImage="/img/cardimg/paints.jpg"
+      heroImage="/img/cardimg/homecare.jpg"
       description="Yophiel Internationals supplies a comprehensive range of specialty chemicals, resins, pigments and additives for the paints and coatings industry. Our portfolio covers everything from binders and pigments to rheology modifiers, matting agents and functional fillers — enabling formulators to achieve superior performance, sustainability and compliance across all coating systems."
       products={products}
     />

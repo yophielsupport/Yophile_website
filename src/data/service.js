@@ -308,7 +308,7 @@ export const serviceList10 = [
     linkUrl: '/paints',
     Icon: Setting,
     title: 'PAINTS & COATINGS',
-    backgroundImage: '/img/cardimg/paints.jpg',
+    backgroundImage: '/img/cardimg/homecare.jpg',
   },
 ];
 
